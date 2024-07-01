@@ -22,7 +22,7 @@
             
             <label>
                 Converter <b>para</b>
-                <select>
+                <select id="selecao">
                     <option>US$ Dólar americano</option>
                     <option>€ Euro</option>
                 </select>
@@ -30,28 +30,28 @@
             
             <label>
                 Valor
-                <input placeholder="R$ 10.000,00">
+                <input id="realholder" placeholder="R$ 10.000,00">
             </label>
             
-            <button type="button">Converter</button>
+            <button id="myButton" type="button">Converter</button>
 
             <section>
                 <div class="primeiro">
                     <img src="./img/real.png" alt="real">
                     <p class="texto">Real</p>
-                    <p class="dinheiro">R$ 10.000,00</p>
+                    <p class="dinheiro" id="realdesejado">R$ 10.000,00</p>
                 </div>
 
                 <img class="seta" src="./img/seta.png" alt="seta">
 
                 <div class="primeiro">
-                    <img src="./img/dolar.png" alt="dolar">
-                    <p class="texto">Dólar Americano</p>
-                    <p class="dinheiro">US$ 2.000,00</p>
+                    <img src="./img/dolar.png" id="trocaimg" alt="dolar">
+                    <p class="texto" id="trocanome">Dólar Americano</p>
+                    <p class="dinheiro" id="dolardesejado">US$ 2.000,00</p>
                 </div>
             </section>
         </main>
     </div>
 </body>
-<script src="./project.js"></script>
+<script src="./scripts.js"></script>
 </html>
