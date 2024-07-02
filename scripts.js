@@ -3,6 +3,7 @@ const options = document.getElementById('selecao')
 
 const dolar = 5.6
 const euro = 6
+const bitcoin = 357.874
 
 const converter = () => {
     const inputReal = document.getElementById('realholder').value
@@ -14,35 +15,46 @@ const converter = () => {
         currency: 'BRL'
     }).format(inputReal)
 
-    if(options.value === "US$ Dólar americano"){
+    if (options.value === "US$ Dólar americano") {
         dolarDesejado.innerHTML = new Intl.NumberFormat('en-US', {
             style: 'currency',
             currency: 'USD'
         }).format(inputReal / dolar)
-    
     }
-    if(options.value ==="€ Euro"){
+    if (options.value === "€ Euro") {
         dolarDesejado.innerHTML = new Intl.NumberFormat('en-DE', {
             style: 'currency',
             currency: 'EUR'
         }).format(inputReal / euro)
     }
+    if (options.value === "Bitcoin") {
+        dolarDesejado.innerHTML  = new Intl.NumberFormat('de-DE', { 
+            style: 'currency', 
+            currency: 'BTC', 
+            minimumFractionDigits: 8 }
+        ).format((inputReal / bitcoin)/1000)
+    }
 }
 
 
-const mudarMoeda = () =>{
+const mudarMoeda = () => {
     const trocarNomeMoeda = document.getElementById('trocanome')
     const trocarImgMoeda = document.getElementById('trocaimg')
 
-    if (options.value === 'US$ Dólar americano'){
+    if (options.value === 'US$ Dólar americano') {
         trocarNomeMoeda.innerHTML = "Dólar americano"
         trocarImgMoeda.src = "./img/dolar.png"
     }
 
 
-    if (options.value === '€ Euro'){
+    if (options.value === '€ Euro') {
         trocarNomeMoeda.innerHTML = "Euro"
         trocarImgMoeda.src = "./img/euro.png"
+    }
+
+    if (options.value === 'Bitcoin'){
+        trocarNomeMoeda.innerHTML = "Bitcoin"
+        trocarImgMoeda.src = "./img/bitcoin.png"
     }
     converter()
 }
